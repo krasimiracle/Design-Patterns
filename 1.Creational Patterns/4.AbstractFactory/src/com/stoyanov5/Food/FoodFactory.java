@@ -1,4 +1,4 @@
-package com.stoyanov5;
+package com.stoyanov5.Food;
 
 import com.stoyanov5.Food.Carbohydrate;
 import com.stoyanov5.Food.Protein;

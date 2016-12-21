@@ -2,6 +2,7 @@ package com.stoyanov5;
 
 import com.stoyanov5.Food.AsianFood.AsianFoodFactory;
 import com.stoyanov5.Food.Carbohydrate;
+import com.stoyanov5.Food.FoodFactory;
 import com.stoyanov5.Food.ItalianFood.ItalianFoodFactory;
 import com.stoyanov5.Food.Protein;
 

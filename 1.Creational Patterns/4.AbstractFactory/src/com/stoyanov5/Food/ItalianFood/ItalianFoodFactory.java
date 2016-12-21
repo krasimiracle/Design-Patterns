@@ -2,7 +2,7 @@ package com.stoyanov5.Food.ItalianFood;
 
 import com.stoyanov5.Food.Carbohydrate;
 import com.stoyanov5.Food.Protein;
-import com.stoyanov5.FoodFactory;
+import com.stoyanov5.Food.FoodFactory;
 
 /**
  * Created by Krasimir Stoyanov on 21-Dec-16.
