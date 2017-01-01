@@ -6,7 +6,6 @@ public class Main {
 
         String tableName = "Salary";
 
-
         HelperFacade.generateReport(HelperFacade.DBTypes.MongoDB, HelperFacade.ReportTypes.PDF, tableName);
 
     }

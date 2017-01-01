@@ -11,11 +11,11 @@ import java.sql.Connection;
 public class HelperFacade {
 
     public enum DBTypes {
-        MYSQL, MongoDB;
+        MYSQL, MongoDB
     }
 
     public enum ReportTypes {
-        HTML, PDF;
+        HTML, PDF
     }
 
     public static void generateReport(DBTypes dbType, ReportTypes reportType, String tableName) {
