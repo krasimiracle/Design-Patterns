@@ -15,43 +15,56 @@ public class BankScreen extends JFrame implements ActionListener {
     // Model instance used for requesting data.
     private BankAccount bankAccount;
 
-    private JButton depositMoneyButton;
-    private JButton withdrawMoneyButton;
-
+    private JButton loginButton;
     private JTextField typeNameField;
     private JPasswordField typePasswordField;
+
+    private LoginListener loginListener;
 
     public BankScreen(BankAccount bankAccount) {
         super("MVC practise");
         this.bankAccount = bankAccount;
 
-        depositMoneyButton = new JButton("Deposit 50 leva.");
-        withdrawMoneyButton = new JButton("Withdraw 50 leva.");
+        loginButton = new JButton("Login.");
+        typeNameField = new JTextField(12);
+        typePasswordField = new JPasswordField(12);
 
         setLayout(new GridBagLayout());
 
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.weightx = 1;
+        gridBagConstraints.weighty = 1;
         gridBagConstraints.fill = GridBagConstraints.NONE;
         gridBagConstraints.anchor = GridBagConstraints.CENTER;
+        gridBagConstraints.insets = new Insets(50, 0, 0, 10);
 
-        add(depositMoneyButton, gridBagConstraints);
+        add(new JLabel("Type your name: "), gridBagConstraints);
 
         // Mutate for second button
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.insets = new Insets(50, 0, 0, 0);
+
+        add(typeNameField, gridBagConstraints);
+
         gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new Insets(0, 0, 0, 10);
 
-        add(withdrawMoneyButton, gridBagConstraints);
+        add(new JLabel("Enter password: "), gridBagConstraints);
 
-        depositMoneyButton.addActionListener(this);
-        withdrawMoneyButton.addActionListener(this);
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new Insets(0, 0, 0, 0);
 
-        withdrawMoneyButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Withdrew 50 leva.");
-            }
-        });
+        add(typePasswordField, gridBagConstraints);
+
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.weighty = 5;
+
+        add(loginButton, gridBagConstraints);
+
+        loginButton.addActionListener(this);
 
         setSize(300, 300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -62,11 +75,23 @@ public class BankScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JButton eventSource = (JButton) e.getSource();
 
+        String name = typeNameField.getText();
+        String password = new String(typePasswordField.getPassword());
         // Depending on the Button event you can invoke adequate command.
-        if (eventSource == depositMoneyButton) {
-            System.out.println("Added 50 leva.");
-        } else if (eventSource == withdrawMoneyButton){
-            System.out.println("This is an another way of invoking withdrawButton");
+        if (eventSource == loginButton) {
+            performLogin(new LoginEvent(name, password));
+        } else {
+            System.out.println("Bing bong, error");
+        }
+    }
+
+    public void setLoginListener(LoginListener loginListener) {
+        this.loginListener = loginListener;
+    }
+
+    public void performLogin(LoginEvent loginEvent) {
+        if (loginListener != null) {
+            loginListener.successfulLogin(loginEvent);
         }
     }
 }

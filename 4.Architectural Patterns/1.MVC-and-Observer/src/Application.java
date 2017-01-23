@@ -19,7 +19,8 @@ public class Application {
     public static void compileApp() {
         BankAccount bankAccount = new BankAccount();
         BankScreen bankScreen = new BankScreen(bankAccount);
-
         BankController bankController = new BankController(bankAccount,bankScreen);
+
+        bankScreen.setLoginListener(bankController);
     }
 }
