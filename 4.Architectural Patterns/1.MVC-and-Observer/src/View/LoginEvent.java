@@ -11,7 +11,7 @@ public class LoginEvent {
     private String name;
     private String password;
 
-    public LoginEvent(String name, String password) {
+    LoginEvent(String name, String password) {
         this.name = name;
         this.password = password;
     }
@@ -20,15 +20,7 @@ public class LoginEvent {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

@@ -19,7 +19,6 @@ public class BankController implements LoginListener {
         this.bankScreen = bankScreen;
     }
 
-
     @Override
     public void successfulLogin(LoginEvent event) {
         System.out.println("Login name: " + event.getName());

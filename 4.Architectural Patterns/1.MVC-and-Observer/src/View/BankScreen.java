@@ -77,6 +77,7 @@ public class BankScreen extends JFrame implements ActionListener {
 
         String name = typeNameField.getText();
         String password = new String(typePasswordField.getPassword());
+
         // Depending on the Button event you can invoke adequate command.
         if (eventSource == loginButton) {
             performLogin(new LoginEvent(name, password));
@@ -89,7 +90,7 @@ public class BankScreen extends JFrame implements ActionListener {
         this.loginListener = loginListener;
     }
 
-    public void performLogin(LoginEvent loginEvent) {
+    private void performLogin(LoginEvent loginEvent) {
         if (loginListener != null) {
             loginListener.successfulLogin(loginEvent);
         }
