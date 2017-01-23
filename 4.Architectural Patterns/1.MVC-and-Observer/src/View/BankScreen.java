@@ -18,6 +18,9 @@ public class BankScreen extends JFrame implements ActionListener {
     private JButton depositMoneyButton;
     private JButton withdrawMoneyButton;
 
+    private JTextField typeNameField;
+    private JPasswordField typePasswordField;
+
     public BankScreen(BankAccount bankAccount) {
         super("MVC practise");
         this.bankAccount = bankAccount;
