@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2.Structural Patterns/1.Facade/1.Facade.iml" filepath="$PROJECT_DIR$/2.Structural Patterns/1.Facade/1.Facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.Creational Patterns/1.Singleton/1.Singleton.iml" filepath="$PROJECT_DIR$/1.Creational Patterns/1.Singleton/1.Singleton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.Structural Patterns/2.Composite/2.Composite.iml" filepath="$PROJECT_DIR$/2.Structural Patterns/2.Composite/2.Composite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.Creational Patterns/2.StaticFactoryMethod/2.StaticFactoryMethod.iml" filepath="$PROJECT_DIR$/1.Creational Patterns/2.StaticFactoryMethod/2.StaticFactoryMethod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.Creational Patterns/3.FactoryMethodPattern/3.FactoryMethodPattern.iml" filepath="$PROJECT_DIR$/1.Creational Patterns/3.FactoryMethodPattern/3.FactoryMethodPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.Creational Patterns/4.AbstractFactory/4.AbstractFactory.iml" filepath="$PROJECT_DIR$/1.Creational Patterns/4.AbstractFactory/4.AbstractFactory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.Creational Patterns/5.Builder/5.Builder.iml" filepath="$PROJECT_DIR$/1.Creational Patterns/5.Builder/5.Builder.iml" />
+    </modules>
+  </component>
+</project>
