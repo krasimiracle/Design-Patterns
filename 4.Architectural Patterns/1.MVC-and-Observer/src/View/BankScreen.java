@@ -1,11 +1,14 @@
 package View;
 
 import Model.BankAccount;
+import Model.Database;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Created by Krasimir Stoyanov on 23.1.2017 г..
@@ -65,6 +68,24 @@ public class BankScreen extends JFrame implements ActionListener {
         add(loginButton, gridBagConstraints);
 
         loginButton.addActionListener(this);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                try {
+                    Database.INSTANCE.connect();
+                } catch (Exception e1) {
+                    JOptionPane.showMessageDialog(BankScreen.this, "Couldn't connect to the database.",
+                            "Error", JOptionPane.WARNING_MESSAGE);
+                    e1.printStackTrace();
+                }
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                Database.INSTANCE.disconnect();
+            }
+        });
 
         setSize(300, 300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
