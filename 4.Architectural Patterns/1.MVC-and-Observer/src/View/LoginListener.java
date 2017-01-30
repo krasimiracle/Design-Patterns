@@ -5,4 +5,6 @@ package View;
  */
 public interface LoginListener {
     void successfulLogin(LoginEvent event);
+
+    void createdUser(LoginEvent event);
 }

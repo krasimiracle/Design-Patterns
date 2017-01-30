@@ -16,7 +16,7 @@ public enum Database {
 
     public void connect() throws Exception {
         if (connection != null) {
-            return;
+            System.out.println("Already connected");
         }
         System.out.println("Connected");
     }
